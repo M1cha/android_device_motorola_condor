@@ -15,5 +15,3 @@
 
 """Custom OTA commands for condor devices"""
 
-def FullOTA_InstallEnd(info):
-	info.script.AppendExtra('ifelse(is_substring("0x5", getprop("ro.boot.radio")), run_program("/sbin/sh", "-c", "busybox cp -R /system/xt1033/* /system/"));')
