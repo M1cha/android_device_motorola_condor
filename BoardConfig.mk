@@ -21,27 +21,30 @@
 # definition file).
 #
 
--include device/motorola/msm8226-common/BoardConfigCommon.mk
+-include device/motorola/msm8610-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/motorola/falcon/BoardConfigVendor.mk
+-include vendor/motorola/condor/BoardConfigVendor.mk
 
-LOCAL_PATH := device/motorola/falcon
+LOCAL_PATH := device/motorola/condor
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/falcon/init/init_falcon.c
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/condor/init/init_condor.c
 
 # Custom relese tools for unified devices
-TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/falcon
+TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/condor
 
 #bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 #TWRP
-DEVICE_RESOLUTION := 720x1280
+DEVICE_RESOLUTION := 540x960
 TW_IGNORE_MAJOR_AXIS_0 := true
+BOARD_HAS_NO_REAL_SDCARD :=
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 
-# userdata 8GB
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 8589934592
+# userdata 4GB
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 4294967296
